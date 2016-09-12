@@ -14,3 +14,10 @@
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
+../.idea/.name
+	../.idea/copyright/
+	../.idea/encodings.xml
+	../.idea/misc.xml
+	../.idea/modules.xml
+	../.idea/reputationbuilder.iml
+	../.idea/workspace.xml
