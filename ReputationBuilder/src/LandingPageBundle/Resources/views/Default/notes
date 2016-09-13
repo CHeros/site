@@ -1,0 +1,4 @@
+<form action="/softlaunch" method="post">
+                <input type="text" name="email" value="myemail@reputationbuilder.io"/>
+                <input type="button" value="click"/>
+            </form>
