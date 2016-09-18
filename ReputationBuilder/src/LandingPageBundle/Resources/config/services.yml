@@ -1,4 +1,7 @@
+parameters:
+
 services:
-#    landing_page.example:
-#        class: LandingPageBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]
+#
+#  landing.page.default.controller:
+#    class: LandingPageBundle\Controller\DefaultController
+#

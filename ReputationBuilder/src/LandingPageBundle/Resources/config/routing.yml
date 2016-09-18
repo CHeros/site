@@ -1,3 +1,7 @@
 landing_page_homepage:
     path:     /
     defaults: { _controller: LandingPageBundle:Default:index }
+
+landing_page_registration:
+    path:   /register
+    defaults: { _controller: LandingPageBundle:Default:register }
