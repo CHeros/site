@@ -1,13 +1,42 @@
-<!-<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>ReputationBuilder.io</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+          crossorigin="anonymous">
     <style>
+
+        html {
+            font-size: 10px;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        html {
+            font-family: Helvetica;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
         body {
             margin:0;
             padding: 0;
         }
+
+        @font-face {
+            font-family: Helvetica;
+            src: url('fonts/Helvetica.dfont');
+        }
+
         container {
             background-image: url('images/background-soon-dark.jpg');
             width: 100%;
@@ -17,118 +46,90 @@
             position: relative;
         }
 
-        other {
-            margin-top:10%;
-            float:left;
-            width: 100%;
+        #logo {
+            width: 300px;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-align-content: center;
+            align-content: center;
+            position: absolute;
+
         }
 
-        other h3 {
-            color: #F2F2F2;
-            font-weight: 100;
-            text-align: center;
-
-        }
-
-        other h2 {
-            color: #FFBF00;
-            font-weight: 900;
-            text-align: center;
-        }
         logo {
+            width: 250px;
+            display: block;
             float: left;
-        }
-
-        @font-face {
-            font-family: Helvetica;
-            src: url('fonts/Helvetica.dfont');
-        }
-
-        logo-text h1{
-            font-weight: lighter;
-            font-style: normal;
-            font-size: 58px;
-            padding: 0;
-            margin: 0;
-            color: #F2F2F2;
+            -webkit-align-content: center;
+            align-content: center;
             text-align: center;
         }
 
-        #logo_span__1 {
+        h1 {
+            color: #fcf8e3;
+            font-family: Helvetica;
+            font-weight: 900;
             font-style: normal;
-            font-weight:900;
-            max-font-size: "43px";
-        }
-
-        logo-text {
-            float: left;
             margin: 0;
-            width: 100%;
-            clear:both;
+            letter-spacing: 2pt;
+            font-stretch: expanded;
+            font-size: 15pt;
 
         }
 
-        #logo_span__2 {
-            color: #FFBF00;
-            font-weight: 100;
-            font-style: normal;
-        }
-
-        logo-text h2 {
-            font-size: 24px;
-            font-weight: lighter;
-            padding: 0;
-            margin: 0;
-            position: absolute;
-            top: 62px;
-            left: 87px;
-            color: #F2F2F2;
+        h1 span {
+            font-weight: normal;
             letter-spacing: 3pt;
-
-
         }
 
-        info {
-            opacity: 0.5;
-            margin-top: 100px;
-            float: left;
-            clear: both;
-            width: 100%;
-            height: 300px;
-
+        #logo_io {
+            color: #f0ad4e;
+            letter-spacing: 1.4pt;
         }
 
-        logo-wrapper {
-            position: relative;
-            float:left;
-            display:block;
-            margin-left: 35%;
-            position: absolute;
-            height: 200px;
-            width: 491px;
-            margin: -200px 0 0 -200px;
-            top: 50%;
-            left: 50%;
-
+        h2 {
+            font-size: smaller;
+            margin: 0;
+            text-align: center;
+            letter-spacing: 2.4pt;
+            font-weight: normal;
+            font-family: Helvetica;
+            color: #fcf8e3;
         }
-
 
     </style>
 </head>
 <body>
-    <container>
-        <other>
-            <logo-text>
-                <logo-wrapper>
-                    <h1 id="logo"><span id="logo_span__1">Reputaion</span>Builder<span id="logo_span__2">.io</span></h1>
-                    <h2>online reputation management</h2>
-                </logo-wrapper>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-            <info>
-                <h2>LAUNCHING EARLY 2017</h2>
-            </info>
-            </logo-text>
-        </other>
+        ga('create', 'UA-84296859-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+    <container>
+        <logo>
+            <h1>Reputation<span>Builder</span><span id="logo_io">.io</span></h1>
+            <h2>online reputation management</h2>
+        </logo>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
     </container>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
 </body>
 </html>
