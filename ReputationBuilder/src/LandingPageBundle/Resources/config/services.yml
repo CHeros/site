@@ -1,4 +1,7 @@
+parameters:
+
 services:
-  landing_page.default:
-    class: LandingPageBundle\Controller\DefaultController
-    arguments: ["@doctrine.orm.entity_manager"]
+#
+#  landing.page.default.controller:
+#    class: LandingPageBundle\Controller\DefaultController
+#

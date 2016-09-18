@@ -9,18 +9,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
-    /** @var EntityManager  */
-    protected $em;
-
-    /**
-     * DefaultController constructor.
-     * @param EntityManager $em
-     */
-    public function __construct()
-    {
-        //$this->em = $em;
-    }
-
     /**
      * @return \Symfony\Component\HttpFoundation\Response
      */
@@ -31,14 +19,15 @@ class DefaultController extends Controller
 
     /**
      * @param Request $request
-     * @param EntityManager $em
      * @throws \Doctrine\ORM\ORMException
      * @throws \Doctrine\ORM\OptimisticLockException
      * @throws \Doctrine\ORM\TransactionRequiredException
      */
-    public function registerAction(Request $request, EntityManager $em)
+    public function registerAction(Request $request)
     {
-        $hasEmail = $this->em->getRepository(Register::class)->findOneBy(
+        /** @var EntityManager $em */
+        $em = $this->container->get('doctrine.orm.entity_manager');
+        $hasEmail = $em->getRepository(Register::class)->findOneBy(
             ['email' => $request->request->get('email')]
         );
 
@@ -53,6 +42,6 @@ class DefaultController extends Controller
         $em->persist($newRegister);
         $em->flush();
 
-
+        $this->forward('LandingPageBundle:Default:index');
     }
 }
