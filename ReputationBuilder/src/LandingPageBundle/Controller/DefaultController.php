@@ -16,9 +16,9 @@ class DefaultController extends Controller
      * DefaultController constructor.
      * @param EntityManager $em
      */
-    public function __construct(EntityManager $em)
+    public function __construct()
     {
-        $this->em = $em;
+        //$this->em = $em;
     }
 
     /**
