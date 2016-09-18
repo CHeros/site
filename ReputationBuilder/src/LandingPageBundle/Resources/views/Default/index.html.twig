@@ -38,6 +38,9 @@
         body {
             margin:0;
             padding: 0;
+            background: none;
+            font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
         }
 
         @font-face {
@@ -46,7 +49,6 @@
         }
 
         container {
-
             width: 100%;
             height: 100%;
             display: block;
@@ -66,7 +68,7 @@
         }
 
         logo {
-            width: 250px;
+            width: 500px;
             display: block;
             float: left;
             -webkit-align-content: center;
@@ -75,19 +77,21 @@
             position: fixed;
             top: 50%;
             left: 50%;
-            margin-top: -50px;
-            margin-left: -125px;
+            margin-top: -70px;
+            margin-left: -254px;
+            margin-bottom: 30px;
         }
 
         h1 {
             color: #fcf8e3;
-            font-family: Helvetica;
+            font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        ;
             font-weight: 900;
             font-style: normal;
             margin: 0;
             letter-spacing: 2pt;
             font-stretch: expanded;
-            font-size: 15pt;
+            font-size: 20pt;
 
         }
 
@@ -102,7 +106,7 @@
         }
 
         h2 {
-            font-size: smaller;
+            font-size:medium;
             margin: 0;
             text-align: center;
             letter-spacing: 2.4pt;
@@ -111,6 +115,58 @@
             color: #fcf8e3;
         }
 
+        #register {
+            -webkit-align-content: center;
+            align-content: center;
+            text-align: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-left: -200px;
+            width: 400px;
+        }
+
+        #inputEmail1 {
+            float: left;
+            margin:0;
+        }
+
+        #registerButton {
+            float: left;
+            width: 20%;
+            margin: 0 0 0 3px;
+            background-color: #f0ad4e;
+            color: #ffffff;
+            border-color:#f0bd5e;
+        }
+        #emailHelp {
+            float:left;
+            font-family: sans-serif Helvetica;
+            font-size: smaller;
+            color: #fcf8e3;
+            margin-top: 5px;
+            margin-left: 5px;
+         }
+
+        #label_email {
+            float: left;
+        }
+
+        #input_container {
+            float: left;
+            width: 75%;
+        }
+
+        .launching {
+            float: left;
+            width: 240px;
+            font-size: large;
+            color: #f0ad4e;
+            position: fixed;
+            bottom: 10pt;
+            left: 50%;
+            margin-left: -120px;
+        }
     </style>
 </head>
 <body>
@@ -127,15 +183,34 @@
 
 
     <container>
+
         <logo>
             <h1>Reputation<span>Builder</span><span id="logo_io">.io</span></h1>
             <h2>online reputation management</h2>
         </logo>
-        <div class="form-group" id="register">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+
+        <div class="form-group col-md-6 col-lg-6" id="register">
+
+            <form method="post" action="/register">
+                <div id="input_container">
+                    <input type="email"
+                            class="form-control"
+                            id="inputEmail1"
+                            aria-describedby="emailHelp"
+                            placeholder="name@reputationbuilder.io"
+                            name="email">
+                </div>
+
+                <input type="submit"
+                       id="registerButton"
+                       class="form-control col-xs-6 "
+                       action="/register"
+                       value="Register" />
+            </form>
+            <h2 class="launching">Launching Early 2017</h2>
         </div>
+
     </container>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
