@@ -27,6 +27,14 @@
             -webkit-text-size-adjust: 100%;
         }
 
+        html {
+            background-image: url('images/background-soon-dark.jpg');
+            -webkit-background-size: cover !important;
+            -moz-background-size: cover !important;
+            -o-background-size: cover !important;
+            background-size: cover !important;
+        }
+
         body {
             margin:0;
             padding: 0;
@@ -38,10 +46,9 @@
         }
 
         container {
-            background-image: url('images/background-soon-dark.jpg');
+
             width: 100%;
             height: 100%;
-            background-size: cover;
             display: block;
             position: relative;
         }
@@ -65,6 +72,11 @@
             -webkit-align-content: center;
             align-content: center;
             text-align: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -125px;
         }
 
         h1 {
@@ -119,7 +131,7 @@
             <h1>Reputation<span>Builder</span><span id="logo_io">.io</span></h1>
             <h2>online reputation management</h2>
         </logo>
-        <div class="form-group">
+        <div class="form-group" id="register">
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
