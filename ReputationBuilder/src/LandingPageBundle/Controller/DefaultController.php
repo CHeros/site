@@ -31,17 +31,18 @@ class DefaultController extends Controller
             ['email' => $request->request->get('email')]
         );
 
-        if ($hasEmail) {
-            // throw error.  Email already associated with account.
-            // return
-        }
+        if (!$hasEmail) {
+	    /** @var  $newRegister */
+            $newRegister = new Register();
+            $newRegister->setEmail($request->request->get('email'));
+            $em->persist($newRegister);
+            $em->flush();
+            $this->get("session")->getFlashBag()->add("notice", "Thanks for registering.  Look for an email in a few weeks reguarding early registration and 3 month trial!");
+        } else {
+	     $this->get("session")->getFlashBag()->add("notice", "You're all set, email was already added");
 
-        /** @var  $newRegister */
-        $newRegister = new Register();
-        $newRegister->setEmail($request->request->get('email'));
-        $em->persist($newRegister);
-        $em->flush();
+	}
 
-        $this->forward('LandingPageBundle:Default:index');
+        return $this->forward('LandingPageBundle:Default:index');
     }
 }
